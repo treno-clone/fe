@@ -5,17 +5,16 @@ import Signin from "../pages/client/auth/Signin";
 import Signup from "../pages/client/auth/Signup";
 
 const AuthRoute = [
-    {
-        path:"",
-        Component: AuthLayout,
-        children: [
-            {index: true , component: Signin},
-            {path:"signin", Component: Signin},
-            {path:"signup", Component: Signup},
-            {path:"forgot-password", Component: ForgotPassword},
-            {path:"reset-password/:resetToken", Component: SetNewPassword},
-        ]
-    }
+  {
+    path: "",
+    Component: AuthLayout,
+    children: [
+      { path: "signin", Component: Signin },
+      { path: "signup", Component: Signup },
+      { path: "forgot-password", Component: ForgotPassword },
+      { path: "reset-password/:resetToken", Component: SetNewPassword },
+    ],
+  },
 ];
 
 export default AuthRoute;

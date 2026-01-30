@@ -1,8 +1,9 @@
 export interface UserType  {
     email: string,
-    username: string,
+    username?: string,
     password?: string,
     confirmPassword? : string,
-    accessToken?: string
+    accessToken?: string,
+    terms?: boolean
 }
 

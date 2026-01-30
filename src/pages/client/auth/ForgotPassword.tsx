@@ -1,9 +1,5 @@
-const ForgotPassword  = () =>{
-  return(
-         <>
-        <p>Not found - 404</p>
-    </>
-    )
-}
+const ForgotPassword = () => {
+  return <p>forgot password</p>;
+};
 
 export default ForgotPassword;
