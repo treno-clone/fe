@@ -104,12 +104,6 @@ const ForgotPassword = () => {
             </a>{" "}
           </p>
         </div>
-
-        {/* Footer Text */}
-        <p className="mt-6 text-center text-xs text-gray-500 px-4">
-          Bằng cách đăng nhập, bạn đồng ý với Điều khoản dịch vụ và Chính sách
-          bảo mật
-        </p>
       </div>
     </div>
   );

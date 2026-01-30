@@ -15,3 +15,7 @@ export const forgotPasswordApi = async (body: UserType) => {
   const res = await api.post("/auth/send-reset-link", body);
   return res;
 };
+export const setNewPasswordApi = async (body: any) => {
+  const res = await api.post("/auth/reset-password", body);
+  return res;
+};

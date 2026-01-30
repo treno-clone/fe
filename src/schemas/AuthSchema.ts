@@ -41,7 +41,21 @@ export const ForgotPasswordSchema = z.object({
     .string({ message: "Email không được bỏ trống" })
     .email({ message: "Email không đúng định dạng" }),
 });
-
+export const setNewPassword = z
+  .object({
+    newPassword: z
+      .string({ message: "Mật khẩu mới không được bỏ trống" })
+      .min(8, { message: "Mật khẩu mới phải có ít nhất 8 ký tự" })
+      .max(20, { message: "Mật khẩu mới không được quá 20 ký tự" }),
+    confirmPassword: z
+      .string({ message: "Vui lòng xác nhận mật khẩu mới" })
+      .min(8, { message: "Xác nhận mật khẩu phải có ít nhất 8 ký tự" })
+      .max(20, { message: "Xác nhận mật khẩu không được quá 20 ký tự" }),
+  })
+  .refine((val) => val.confirmPassword === val.newPassword, {
+    message: "Mật khẩu xác nhận không khớp",
+    path: ["confirmPassword"],
+  });
 export const ChangePasswordSchema = z
   .object({
     currentPassword: z
