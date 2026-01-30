@@ -21,13 +21,13 @@ const Sigin = () => {
   const onSubmit = async (data: UserType) => {
     try {
       const res = await signinApi(data);
+      localStorage.setItem("accessToken", res.data.accessToken);
       console.log(res);
       toast.success("Đăng nhập thành công");
       reset();
-      nav("/");
-    } catch (error) {
-      console.log(error);
-      toast.error("Mật khẩu hoặc tài khoản không đúng");
+      //   nav("/");
+    } catch (error: any) {
+      toast.error(error.response?.data?.message);
     }
   };
   return (

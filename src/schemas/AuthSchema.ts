@@ -35,6 +35,13 @@ export const SignupSchema = z
     message: "Mật khẩu xác nhận không khớp",
     path: ["confirmPassword"],
   });
+
+export const ForgotPasswordSchema = z.object({
+  email: z
+    .string({ message: "Email không được bỏ trống" })
+    .email({ message: "Email không đúng định dạng" }),
+});
+
 export const ChangePasswordSchema = z
   .object({
     currentPassword: z

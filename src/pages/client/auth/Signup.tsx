@@ -22,14 +22,13 @@ const Signup = () => {
 
   const onSubmit = async (data: UserType) => {
     try {
-      const { confirmPassword, terms, ...userInfo} = data;
+      const { confirmPassword, terms, ...userInfo } = data;
       await signupApi(userInfo);
       toast.success("Đăng ký thành công");
       reset();
       nav("/signin");
-    } catch (err: any) {
-      toast.error(err.message || "Đăng ký thất bại");
-      console.log(err);
+    } catch (error: any) {
+      toast.error(error.response?.data?.message);
     }
   };
 
